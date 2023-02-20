@@ -9,18 +9,21 @@ require('dotenv').config()
 
 const port = process.env.PORT || 3500
 
+// middleware
+
 app.use(express.json())
 app.use(express.static('./public'))
 
 
 
+// route
 
 app.use('/api/v1/tasks' , taskroutes )
 
 
 
 
-
+// errorhandler middleware
 
 app.use(errorhandler)
 app.use(notfound)
